@@ -8,7 +8,6 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import * as path from "node:path";
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.

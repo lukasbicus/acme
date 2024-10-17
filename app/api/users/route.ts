@@ -11,8 +11,8 @@ export async function GET() {
     await client.sql`BEGIN`;
     const users = await getUsers();
     await client.sql`COMMIT`;
-
-    return Response.json({ users: users.rows.map(({password, ...otherFields}) => otherFields) });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    return Response.json({ users: users.rows.map(({password: _password, ...otherFields}) => otherFields) });
   } catch (error) {
     await client.sql`ROLLBACK`;
     return Response.json({ error }, { status: 500 });
